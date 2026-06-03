@@ -1,0 +1,16 @@
+---
+services:
+  freqtrade-eth-btc-trend-compound-4h-v4-dryrun:
+    image: freqtradeorg/freqtrade:stable
+    restart: unless-stopped
+    container_name: freqtrade_eth_btc_trend_compound_4h_v4_dryrun
+    volumes:
+      - "./user_data:/freqtrade/user_data"
+    ports:
+      - "127.0.0.1:8110:8080"
+    command: >
+      trade
+      --logfile /freqtrade/user_data/logs/freqtrade_eth_btc_trend_compound_4h_v4_dryrun.log
+      --db-url sqlite:////freqtrade/user_data/tradesv3_eth_btc_trend_compound_4h_v4_dryrun.sqlite
+      --config /freqtrade/user_data/config_eth_btc_trend_compound_4h_v4_dryrun.json
+      --strategy EthBtcTrendCompound4hV4

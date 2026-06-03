@@ -1,0 +1,72 @@
+# OS and editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Secrets and environment
+.env
+*.env
+!*.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Freqtrade runtime data and generated artifacts
+ft_userdata/user_data/data/
+ft_userdata/user_data/logs/
+ft_userdata/user_data/backtest_results/
+ft_userdata/user_data/plot/
+ft_userdata/user_data/notebooks/
+ft_userdata/user_data/freqaimodels/
+ft_userdata/user_data/hyperopts/
+ft_userdata/user_data/hyperopt_results/
+ft_userdata/user_data/ml_models/
+
+# Databases and generated state
+ft_userdata/user_data/*.sqlite
+ft_userdata/user_data/*.sqlite-shm
+ft_userdata/user_data/*.sqlite-wal
+ft_userdata/user_data/*.db
+ft_userdata/user_data/*.db-shm
+ft_userdata/user_data/*.db-wal
+ft_userdata/user_data/*.zip
+ft_userdata/user_data/backtest_debug_signals*.zip
+
+# Sensitive or local configs.
+# Keep only public dry-run/template configs with placeholders.
+ft_userdata/user_data/config*.json
+!ft_userdata/user_data/config_eth_btc_trend_compound_4h_v4_dryrun.json
+!ft_userdata/user_data/config_eth_btc_trend_compound_4h_v4_live.template.json
+ft_userdata/user_data/ai_daily_trader_v1_config.json
+ft_userdata/user_data/ai_daily_trader_v1_codex_packet.json
+ft_userdata/user_data/ai_daily_trader_v1_codex_decision.json
+ft_userdata/user_data/ai_daily_trader_v1.sqlite
+
+# Public reports: keep only selected markdown examples.
+ft_userdata/user_data/reports/*
+!ft_userdata/user_data/reports/moonshot_watchlist_latest.md
+
+# Internal operating handoff files kept out of the first public baseline.
+ft_userdata/user_data/docs/PROJECT_HANDOFF_FOR_PORTFOLIO_CODEX.md
+ft_userdata/user_data/docs/CRYPTO_QUANT_HEARTBEAT_FOCUS.md
+ft_userdata/user_data/docs/LIVE_TRADING_BOT_STARTER.md
+ft_userdata/user_data/tools/run_v5_weekly_healthcheck.ps1
+
+# Keep the focused V4 compose workflow only.
+ft_userdata/docker-compose*.yml
+!ft_userdata/docker-compose.eth-btc-trend-compound-4h-v4-dryrun.yml
+!ft_userdata/docker-compose.eth-btc-trend-compound-4h-v4-live.template.yml
+
+# Duplicate or unused top-level Freqtrade scaffold.
+/user_data/
