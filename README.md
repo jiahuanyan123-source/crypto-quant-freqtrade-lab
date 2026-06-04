@@ -1,5 +1,7 @@
 # Crypto Quant Freqtrade Lab
 
+[![Python syntax check](https://github.com/jiahuanyan123-source/crypto-quant-freqtrade-lab/actions/workflows/python-syntax.yml/badge.svg)](https://github.com/jiahuanyan123-source/crypto-quant-freqtrade-lab/actions/workflows/python-syntax.yml)
+
 This repository is a public-safe Freqtrade research lab for crypto quant strategy engineering.
 
 The project focuses on:
@@ -97,6 +99,18 @@ docker compose -f docker-compose.eth-btc-trend-compound-4h-v4-dryrun.yml run --r
   --enable-protections
 ```
 
+## Reproducibility Checklist
+
+Before treating a run as evidence, record:
+
+- repository commit SHA and strategy file path
+- data source, exchange, pairs, timeframe, timerange, and whether the run uses futures or spot
+- exact command used for data download, backtest, dry-run, or report generation
+- config file path and any intentionally omitted secrets
+- outputs reviewed: total return, max drawdown, trade count, profit factor, win rate, and failure notes
+- public-safety check: no API keys, logs, SQLite databases, raw market data, or zipped backtest artifacts committed
+
+This checklist makes results inspectable. It does not imply profitability.
 ## Evidence Standard
 
 The public standard for this repository is:
@@ -111,7 +125,6 @@ See `docs/results_summary.md` for the current public result summary.
 
 ## Next Steps
 
-- Add a reproducible data download guide.
-- Add a small CI check for Python syntax.
+- Expand the reproducible data download guide with exact Freqtrade commands.
 - Add a walk-forward validation summary with exact command lines.
 - Publish the first GitHub release only after the public-safe file list is verified.
