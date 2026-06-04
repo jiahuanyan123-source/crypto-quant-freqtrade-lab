@@ -129,7 +129,5 @@ These exclusions are part of the public evidence standard. A portfolio project s
 
 ## Open Gaps
 
-- Add CI for syntax checks.
-- Add a reproducible data download guide.
-- Add walk-forward validation commands and a compact table of results.
-- Publish to GitHub only after the staged file list is verified.
+- Run the documented walk-forward commands and fill the compact result table.
+- Publish the first GitHub release only after the public-safe file list is verified.

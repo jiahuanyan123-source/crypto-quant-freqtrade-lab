@@ -150,5 +150,5 @@ See `docs/results_summary.md` for the current public result summary.
 
 ## Next Steps
 
-- Add a walk-forward validation summary with exact command lines.
+- Run the walk-forward commands and fill the public result table.
 - Publish the first GitHub release only after the public-safe file list is verified.
