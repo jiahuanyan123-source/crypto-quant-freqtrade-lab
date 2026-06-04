@@ -60,7 +60,8 @@ Ignored by design:
 - `ft_userdata/user_data/docs/ETH_BTC_REGIME_TREND_4H_V5_STATUS.md`: V5 comparison and non-promotion note.
 - `ft_userdata/user_data/docs/MULTI_ASSET_REGIME_TREND_4H_V1_STATUS.md`: multi-asset rotation test and rejection note.
 - `ft_userdata/user_data/tools/moonshot_watchlist_v1.py`: high-risk opportunity radar script.
-- `docs/results_summary.md`: public summary of verified historical results and caveats.
+- docs/results_summary.md: public summary of verified historical results and caveats.
+- docs/walk_forward_validation.md: walk-forward validation protocol, exact commands, and result table template.
 
 ## Minimal Workflow
 
