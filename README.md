@@ -66,6 +66,30 @@ Ignored by design:
 
 Install and run Freqtrade using the official Freqtrade Docker workflow. Market data is intentionally not committed to this repository, so a fresh clone needs to download data before reproducing backtests.
 
+## Data Download Guide
+
+Market data is not committed. To reproduce the promoted V4 backtest window, download data into the local Freqtrade user data directory first:
+
+```powershell
+cd ft_userdata
+docker compose -f docker-compose.eth-btc-trend-compound-4h-v4-dryrun.yml run --rm freqtrade-eth-btc-trend-compound-4h-v4-dryrun download-data `
+  --config /freqtrade/user_data/config_eth_btc_trend_compound_4h_v4_dryrun.json `
+  --timeframes 4h `
+  --timerange 20200101-20260501
+```
+
+For a shorter smoke test before a full historical run, use a narrower timerange:
+
+```powershell
+cd ft_userdata
+docker compose -f docker-compose.eth-btc-trend-compound-4h-v4-dryrun.yml run --rm freqtrade-eth-btc-trend-compound-4h-v4-dryrun download-data `
+  --config /freqtrade/user_data/config_eth_btc_trend_compound_4h_v4_dryrun.json `
+  --timeframes 4h `
+  --timerange 20240101-20240501
+```
+
+The config controls the exchange, pairlist, futures/spot mode, and other run settings. Downloaded data should stay under `ft_userdata/user_data/data/`, which is intentionally ignored by Git.
+
 Start the V4 dry-run stack:
 
 ```powershell
@@ -126,6 +150,5 @@ See `docs/results_summary.md` for the current public result summary.
 
 ## Next Steps
 
-- Expand the reproducible data download guide with exact Freqtrade commands.
 - Add a walk-forward validation summary with exact command lines.
 - Publish the first GitHub release only after the public-safe file list is verified.
