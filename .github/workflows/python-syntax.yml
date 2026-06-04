@@ -1,0 +1,41 @@
+name: Python syntax check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  py-compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Compile public Python files
+        shell: python
+        run: |
+          from pathlib import Path
+          import py_compile
+          import sys
+
+          files = sorted(Path(".").rglob("*.py"))
+          failures = []
+          for path in files:
+              try:
+                  py_compile.compile(str(path), doraise=True)
+              except Exception as exc:
+                  failures.append((path, exc))
+
+          if failures:
+              for path, exc in failures:
+                  print(f"{path}: {exc}", file=sys.stderr)
+              raise SystemExit(1)
+
+          print(f"Compiled {len(files)} Python files.")
