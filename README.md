@@ -111,6 +111,7 @@ Before treating a run as evidence, record:
 - public-safety check: no API keys, logs, SQLite databases, raw market data, or zipped backtest artifacts committed
 
 This checklist makes results inspectable. It does not imply profitability.
+
 ## Evidence Standard
 
 The public standard for this repository is:
